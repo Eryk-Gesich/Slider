@@ -1,3 +1,7 @@
+html, body {
+    font-size: 16px;
+}
+
 @keyframes slide-1-animation {
     0% {
         left: 0
@@ -63,19 +67,15 @@
 
 
 .slider {
-    background-color: coral;
-}
-
-.slider .slider__slides {
     position: relative;
-    min-height: 300px;
-    /*overflow: hidden;*/
+    min-height: 18.75rem;
+    overflow: hidden;
 }
 
 .slider .slider__slide {
     display: inline-block;
     width: 100%;
-    min-height: 300px;
+    min-height: 18.75rem;
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
@@ -84,34 +84,84 @@
 
 .slider .slider__slide:first-child {
     background-image: url("../images/spider.jpg");
-    /*animation: slide-1-animation 10s infinite;*/
+    animation: slide-1-animation 10s infinite;
     animation-direction: alternate;
 }
 
 .slider .slider__slide:nth-child(2) {
     background-image: url("../images/transform.jpg");
     left: 100%;
-    /*animation: slide-2-animation 10s infinite;*/
+    animation: slide-2-animation 10s infinite;
     animation-direction: alternate;
 }
 
 .slider .slider__slide:last-child {
     background-image: url("../images/woman.jpg");
     left: 200%;
-    /*animation: slide-3-animation 10s infinite;*/
+    animation: slide-3-animation 10s infinite;
     animation-direction: alternate;
 }
 
-.slider .slider__nav {
-    justify-content: space-between;
-    display: flex;
+.slider .slider__desc {
+    background: rgba(0, 0, 0, .5);
+    color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.625rem 4.375rem 0.625rem 0.625rem;
+    font-family: Roboto,  sans-serif;
+    box-sizing: border-box;
+}
+.slider .slider__title {
+    margin-top: 0;
+}
+.slider .slider__text {
+    margin: 0;
+    line-height: 1.6;
+}
+.slider .slider__link {
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    right: 0.625rem;
+    top: calc(50% - 1.5625rem);
+    background-image: url("../images/read_more.svg");
+    background-repeat: no-repeat;
+    height: 3.125rem;
+    width: 3.125rem;
+    text-indent: -9999px;
+    white-space: nowrap;
 }
 
 .nav {
+    position: absolute;
+    top: calc(50% - 1.4375rem);
+    width: 100%;
+    opacity: 0.4;
+    transition: opacity 400ms;
+}
+
+.slider:hover .nav {
+    opacity: 1;
 }
 
 .nav .nav__btn {
+    background-color: rgba(255, 255, 255, .4);
+    background-image: url("../images/next_arrow.svg");
+    background-repeat: no-repeat;
+    border: 0;
+    text-indent: -9999px;
+    white-space: nowrap;
+    height: 2.875rem;
+    width: 2.875rem;
+    transform: rotate(180deg);
+    cursor: pointer;
+    border-radius: 50%;
+    margin-inline: 0.625rem;
 }
 
 .nav .nav__btn.nav__btn--next {
+    transform: rotate(0);
+    position: absolute;
+    right: 0;
 }
